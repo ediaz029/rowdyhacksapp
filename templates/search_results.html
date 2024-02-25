@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CVE Search Results</title>
+</head>
+<body>
+    <h1>CVE Search Results</h1>
+    {% if vulnerabilities %}
+        <ul>
+            {% for vuln in vulnerabilities %}
+                <li>
+                    <strong>CVE ID:</strong> {{ vuln.cve_id }}<br>
+                    <strong>Published Date:</strong> {{ vuln.published }}<br>
+                    <strong>Last Modified:</strong> {{ vuln.last_modified }}<br>
+                    <strong>Description:</strong> {{ vuln.description }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No CVE data found.</p>
+    {% endif %}
+</body>
+</html>
