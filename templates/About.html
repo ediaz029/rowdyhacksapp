@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="About.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/About.css') }}">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +17,9 @@
     </label>
 
     <ul class="menu__box">
-      <li><a class="menu__item" href="Home.html">Home</a></li>
-      <li><a class="menu__item" href="About.html">About</a></li>
-      <li><a class="menu__item" href="contact.html">Contact</a></li>
+      <li><a class="menu__item" href="/">Home</a></li>
+      <li><a class="menu__item" href="/about">About</a></li>
+      <li><a class="menu__item" href="/contact">Contact</a></li>
     </ul>
   </div>
     <div class="banner">
@@ -30,7 +30,7 @@
     <div class="about-section">
     
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="About.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/About.css') }}">
     <h1>Who We Are! </h1>
     <p> VulneraPlay is your ultimate destination for uncovering vulnerabilities within a 
         myriad of online gaming platforms. Our website utilizes cutting-edge technology 
