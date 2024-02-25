@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper Demo</title>
+    <script>
+        // Function to fetch data from the website
+        function fetchData() {
+            // Replace 'YOUR_WEBSITE_URL_TO_SCRAPE' with the URL of the website you want to scrape
+            var url = 'http://127.0.0.1:3000/views/Results.html';
+            
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    // Parse the HTML response
+                    var parser = new DOMParser();
+                    var htmlDoc = parser.parseFromString(data, 'text/html');
+                    
+                    // Modify this part according to your HTML structure
+                    // For example, if you want to scrape titles of articles
+                    var results = htmlDoc.querySelectorAll('.vulnerbilities');
+                    
+                    // Display the scraped data
+                    var output = '';
+                    results.forEach(result => {
+                        output += '<li>' + result.textContent.trim() + '</li>';
+                    });
+                    
+                    // Display the results in the HTML page
+                    document.getElementById('results').innerHTML = output;
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Web Scraper Demo</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <ul id="results"></ul>
+</body>
+</html>
