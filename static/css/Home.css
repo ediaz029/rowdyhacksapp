@@ -1,12 +1,14 @@
 /* Body styles */
-body {
+body, html{
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: lightblue;
 }
 
 /* Banner styles */
 .banner {
-    background-image: url('data:image/jpeg;base64,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');
+    font-family: 'Share Tech Mono', monospace;
+    background-color: lightblue;
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -31,6 +33,7 @@ body {
 
 /* Search container styles */
 .search-container {
+    font-family: 'Share Tech Mono', monospace;
     width: 80%;
     margin: auto;
     text-align: center;
